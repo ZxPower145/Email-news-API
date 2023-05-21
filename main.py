@@ -7,7 +7,8 @@ api_key = "79d1f6c78da344299c31ce709ef97daf"
 body = ""
 
 # UI
-st.header("Sign up for a free newsletter :")
+st.header("Receive 20 news about a topic you choose :")
+st.subheader("Make sure to check your spam folder!")
 
 with st.form(key="email_form"):
     user_email = st.text_input("Your email address: ")
@@ -43,6 +44,6 @@ with st.form(key="email_form"):
     """
     message = message.encode("utf-8")
     if sub_btn:
-        se.send_email(user_email, message)
+        se.send_email(message, user_email)
         st.info("Email sent successfully!")
 
